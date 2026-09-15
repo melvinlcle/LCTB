@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L.C.T.B Électricité - Artisan Électricien & Climatisation</title>
+    <!-- Chargement automatique du design (Tailwind) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- En-tête (Menu) -->
+    <header class="bg-white shadow-sm p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-blue-600">L.C.T.B Électricité</div>
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#services" class="hover:text-blue-600 transition">Nos Prestations</a>
+                <a href="#avantages" class="hover:text-blue-600 transition">Pourquoi nous ?</a>
+            </nav>
+            <a href="tel:0625020190" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition">
+                📞 06 25 02 01 90
+            </a>
+        </div>
+    </header>
+
+    <!-- Section Principale (Hero) -->
+    <section class="bg-slate-900 text-white py-24 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                L'excellence en électricité et climatisation, au meilleur prix.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10">
+                Fort de plus de 20 ans de savoir-faire, l'artisan L.C.T.B Électricité intervient à Bruay-sur-l'Escaut pour sécuriser vos installations et optimiser votre confort. Une expertise de confiance sans exploser votre budget, disponible jusqu'à 19h30.
+            </p>
+            <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-500 shadow-lg transition">
+                Demander un devis gratuit
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 px-4 max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Nos Prestations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Service 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <div class="text-4xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold mb-3">Électricité Générale & Dépannage</h3>
+                <p class="text-gray-600">Sécurisez votre habitat. De la mise aux normes de votre tableau électrique à la création de nouvelles prises ou au dépannage urgent, nous garantissons une installation fiable et conforme.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <div class="text-4xl mb-4">❄️</div>
+                <h3 class="text-xl font-bold mb-3">Pose de Climatisation</h3>
+                <p class="text-gray-600">Prenez le contrôle de votre confort toute l'année. Nous vous conseillons et installons des systèmes de climatisation performants, silencieux et économiques, parfaitement adaptés à votre logement.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div id="avantages" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-3">20 Ans d'Expertise & Prix Compétitifs</h3>
+                <p class="text-gray-600">L'artisanat de qualité ne doit pas être un luxe. Bénéficiez d'un savoir-faire éprouvé, d'un diagnostic honnête et de tarifs transparents et ultra-compétitifs pour tous vos travaux.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="bg-blue-50 py-20 px-4">
+        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-8">Contactez-nous pour un devis gratuit</h2>
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                    <input type="text" class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Votre nom">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone ou Email</label>
+                    <input type="text" class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Vos coordonnées">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Votre projet / demande</label>
+                    <textarea rows="4" class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Détaillez votre besoin..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <p>&copy; 2026 L.C.T.B Électricité. Tous droits réservés.</p>
+        <p class="text-sm mt-2">📍 142 rue Ledru Rollin, 59860 Bruay-sur-l'Escaut | 📞 06 25 02 01 90</p>
+        <p class="text-sm mt-1">🕒 Ouvert jusqu'à 19h30</p>
+    </footer>
+
+</body>
+</html>
