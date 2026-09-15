@@ -1,102 +1,270 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L.C.T.B Électricité - Artisan Électricien & Climatisation</title>
-    <!-- Chargement automatique du design (Tailwind) -->
+    <title>L.C.T.B Électricité - Climatisation & Électricité</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Effet de fondu pour le pop-up */
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Style de la barre de défilement masquée pour le slider */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-blue-300">
 
-    <!-- En-tête (Menu) -->
-    <header class="bg-white shadow-sm p-4 sticky top-0 z-50">
+    <!-- Pop-up (S'affiche après 5 secondes via JS en bas) -->
+    <div id="promo-popup" class="fixed inset-0 bg-blue-900/80 hidden justify-center items-center z-[100] backdrop-blur-sm transition-opacity">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md text-center relative fade-in mx-4">
+            <button onclick="fermerPopup()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 font-bold text-xl">&times;</button>
+            <div class="text-5xl mb-4">🎁</div>
+            <h3 class="text-2xl font-extrabold text-blue-900 mb-2">Préparez la saison !</h3>
+            <p class="text-gray-600 mb-6">Demandez votre devis ce mois-ci et bénéficiez d'un diagnostic thermique 100% offert pour l'installation de votre climatisation.</p>
+            <a href="VOTRE_LIEN_GOOGLE_FORM_ICI" target="_blank" class="block w-full bg-blue-600 text-white font-bold py-3 rounded-full hover:bg-blue-700 shadow-lg transition transform hover:scale-105">
+                Obtenir mon diagnostic gratuit
+            </a>
+        </div>
+    </div>
+
+    <!-- En-tête -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm p-4 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-extrabold text-blue-600">L.C.T.B Électricité</div>
-            <nav class="hidden md:flex space-x-6 font-medium">
-                <a href="#services" class="hover:text-blue-600 transition">Nos Prestations</a>
-                <a href="#avantages" class="hover:text-blue-600 transition">Pourquoi nous ?</a>
+            <div class="text-2xl font-extrabold text-blue-700 tracking-tight">L.C.T.B <span class="text-sky-500">Climatisation</span></div>
+            <nav class="hidden md:flex space-x-6 font-medium text-blue-900">
+                <a href="#avantages" class="hover:text-blue-500 transition">Les Bienfaits</a>
+                <a href="#etapes" class="hover:text-blue-500 transition">Le Déroulement</a>
+                <a href="#avis" class="hover:text-blue-500 transition">Avis</a>
+                <a href="#faq" class="hover:text-blue-500 transition">FAQ</a>
             </nav>
-            <a href="tel:0625020190" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition">
-                📞 06 25 02 01 90
+            <!-- Bouton Google Form -->
+            <a href="VOTRE_LIEN_GOOGLE_FORM_ICI" target="_blank" class="bg-gradient-to-r from-blue-600 to-sky-500 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg hover:from-blue-700 hover:to-sky-600 transition-all transform hover:-translate-y-1">
+                Devis Gratuit
             </a>
         </div>
     </header>
 
-    <!-- Section Principale (Hero) -->
-    <section class="bg-slate-900 text-white py-24 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
+    <!-- Section Hero (Accroche principale) -->
+    <section class="relative bg-blue-900 text-white overflow-hidden py-24 px-4 text-center">
+        <!-- Décoration de fond -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
+            <div class="absolute top-32 -right-24 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="relative max-w-4xl mx-auto z-10">
+            <span class="bg-sky-500 text-white text-sm font-bold px-4 py-1 rounded-full uppercase tracking-wider mb-6 inline-block">Artisan Certifié</span>
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                L'excellence en électricité et climatisation, au meilleur prix.
+                Le confort absolu garanti : <br><span class="text-sky-300">Un été au frais, un hiver au chaud.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10">
-                Fort de plus de 20 ans de savoir-faire, l'artisan L.C.T.B Électricité intervient à Bruay-sur-l'Escaut pour sécuriser vos installations et optimiser votre confort. Une expertise de confiance sans exploser votre budget, disponible jusqu'à 19h30.
+            <p class="text-lg md:text-xl text-blue-100 mb-10 font-light">
+                Ne subissez plus les canicules insupportables ni les hivers glaciaux. Saviez-vous qu'une climatisation réversible peut diviser votre facture de chauffage par 3 ?
             </p>
-            <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-500 shadow-lg transition">
-                Demander un devis gratuit
-            </a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="VOTRE_LIEN_GOOGLE_FORM_ICI" target="_blank" class="bg-white text-blue-900 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 shadow-xl transition transform hover:scale-105">
+                    Estimer mon projet en 1 min
+                </a>
+                <a href="#etapes" class="border-2 border-white/50 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white/10 transition">
+                    Découvrir comment ça marche
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Section Services -->
-    <section id="services" class="py-20 px-4 max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">Nos Prestations</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Section Image Été/Hiver et Bienfaits -->
+    <section id="avantages" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">Pourquoi passer à la climatisation réversible ?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Bien plus qu'un simple vent frais en été, c'est un véritable investissement pour votre maison.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+            <!-- Remplacer les src par de vraies images -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl flex h-80">
+                <div class="w-1/2 bg-sky-200 relative">
+                    <img src="https://images.unsplash.com/photo-1571127236794-81c0bbef1c8f?auto=format&fit=crop&w=400&q=80" alt="Été" class="object-cover w-full h-full opacity-80 mix-blend-overlay">
+                    <div class="absolute inset-0 flex items-center justify-center text-blue-900 font-bold text-2xl bg-white/30 backdrop-blur-sm">Été ❄️</div>
+                </div>
+                <div class="w-1/2 bg-orange-200 relative border-l-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1542223616-9dc5cb669527?auto=format&fit=crop&w=400&q=80" alt="Hiver" class="object-cover w-full h-full opacity-80 mix-blend-overlay">
+                    <div class="absolute inset-0 flex items-center justify-center text-orange-900 font-bold text-2xl bg-white/30 backdrop-blur-sm">Hiver 🔥</div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="bg-blue-100 p-3 rounded-lg text-blue-600 text-2xl">💰</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-900">Jusqu'à 70% d'économies</h3>
+                        <p class="text-gray-600">Grâce à un COP (Coefficient de Performance) élevé, pour 1 kWh consommé, la clim en restitue jusqu'à 4 sous forme de chaleur.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-blue-100 p-3 rounded-lg text-blue-600 text-2xl">🍃</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-900">Purification de l'air</h3>
+                        <p class="text-gray-600">Les filtres intégrés capturent les pollens, la poussière et les allergènes, assainissant l'air de votre maison.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-blue-100 p-3 rounded-lg text-blue-600 text-2xl">📱</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-900">Contrôle intelligent</h3>
+                        <p class="text-gray-600">Pilotez la température de chaque pièce depuis votre smartphone, même avant de rentrer chez vous.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Étapes (Déroulement) -->
+    <section id="etapes" class="bg-blue-50 py-20 px-4 border-y border-blue-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-12">Votre projet, étape par étape</h2>
             
-            <!-- Service 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
-                <div class="text-4xl mb-4">⚡</div>
-                <h3 class="text-xl font-bold mb-3">Électricité Générale & Dépannage</h3>
-                <p class="text-gray-600">Sécurisez votre habitat. De la mise aux normes de votre tableau électrique à la création de nouvelles prises ou au dépannage urgent, nous garantissons une installation fiable et conforme.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">1</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2 mt-2">La Demande & Devis</h3>
+                    <p class="text-gray-600">Vous remplissez notre formulaire. Nous analysons vos besoins et vous fournissons une estimation transparente.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">2</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2 mt-2">Visite Technique</h3>
+                    <p class="text-gray-600">Notre expert se déplace chez vous pour valider la faisabilité, l'emplacement idéal et la puissance requise.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">3</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2 mt-2">Installation</h3>
+                    <p class="text-gray-600">Pose minutieuse et respectueuse de votre intérieur par nos techniciens qualifiés.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 relative">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">4</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2 mt-2">Mise en Service</h3>
+                    <p class="text-gray-600">Tests d'étanchéité, paramétrage et explication détaillée du fonctionnement de vos appareils.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 relative md:col-span-2">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">5</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2 mt-2">Profitez de votre confort !</h3>
+                    <p class="text-gray-600">Savourez une température idéale toute l'année. Nous restons disponibles pour le SAV et l'entretien annuel afin de garantir la longévité de votre matériel.</p>
+                </div>
             </div>
-
-            <!-- Service 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
-                <div class="text-4xl mb-4">❄️</div>
-                <h3 class="text-xl font-bold mb-3">Pose de Climatisation</h3>
-                <p class="text-gray-600">Prenez le contrôle de votre confort toute l'année. Nous vous conseillons et installons des systèmes de climatisation performants, silencieux et économiques, parfaitement adaptés à votre logement.</p>
-            </div>
-
-            <!-- Service 3 -->
-            <div id="avantages" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
-                <div class="text-4xl mb-4">🤝</div>
-                <h3 class="text-xl font-bold mb-3">20 Ans d'Expertise & Prix Compétitifs</h3>
-                <p class="text-gray-600">L'artisanat de qualité ne doit pas être un luxe. Bénéficiez d'un savoir-faire éprouvé, d'un diagnostic honnête et de tarifs transparents et ultra-compétitifs pour tous vos travaux.</p>
-            </div>
-
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="bg-blue-50 py-20 px-4">
-        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-xl">
-            <h2 class="text-3xl font-bold text-center mb-8">Contactez-nous pour un devis gratuit</h2>
-            <form action="#" method="POST" class="space-y-6">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
-                    <input type="text" class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Votre nom">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone ou Email</label>
-                    <input type="text" class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Vos coordonnées">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Votre projet / demande</label>
-                    <textarea rows="4" class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Détaillez votre besoin..."></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
-                    Envoyer ma demande
-                </button>
-            </form>
+    <!-- Section Avis Google (Slider CSS) -->
+    <section id="avis" class="py-20 px-4 max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-blue-900 mb-2">Ils nous font confiance</h2>
+        <p class="text-gray-600 mb-10">Découvrez les retours de nos clients satisfaits.</p>
+        
+        <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar">
+            <!-- Avis 1 -->
+            <div class="snap-center shrink-0 w-80 bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-left">
+                <div class="text-yellow-400 mb-2 text-xl">★★★★★</div>
+                <p class="text-gray-700 italic mb-4">"Installation d'une clim réversible dans le salon. Travail très propre, équipe ponctuelle et prix respecté. Je recommande à 100% !"</p>
+                <div class="font-bold text-blue-900">- Marc D.</div>
+            </div>
+            <!-- Avis 2 -->
+            <div class="snap-center shrink-0 w-80 bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-left">
+                <div class="text-yellow-400 mb-2 text-xl">★★★★★</div>
+                <p class="text-gray-700 italic mb-4">"Super conseil pour l'emplacement des unités. On a passé notre premier été au frais sans exploser la facture EDF. Merci !"</p>
+                <div class="font-bold text-blue-900">- Sophie L.</div>
+            </div>
+            <!-- Avis 3 -->
+            <div class="snap-center shrink-0 w-80 bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-left">
+                <div class="text-yellow-400 mb-2 text-xl">★★★★★</div>
+                <p class="text-gray-700 italic mb-4">"Devis rapide, pose soignée, finitions impeccables. Artisan sérieux qui connaît vraiment son métier."</p>
+                <div class="font-bold text-blue-900">- Jean-Pierre T.</div>
+            </div>
+        </div>
+
+        <a href="VOTRE_LIEN_PAGE_GOOGLE_ICI" target="_blank" class="inline-flex items-center gap-2 bg-white text-blue-900 border-2 border-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-50 transition">
+            <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+            Voir tous nos avis sur Google
+        </a>
+    </section>
+
+    <!-- Section FAQ -->
+    <section id="faq" class="bg-white py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-10">Questions Fréquentes</h2>
+            
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <details class="group bg-blue-50 p-6 rounded-2xl cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-lg text-blue-900 list-none">
+                        Combien coûte l'installation d'une climatisation ?
+                        <span class="transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Le prix varie en fonction du nombre de pièces (monosplit ou multisplit), de la puissance nécessaire et de la complexité de l'installation. Demandez votre devis gratuit via notre formulaire pour une estimation précise adaptée à votre logement.
+                    </p>
+                </details>
+
+                <!-- Question 2 -->
+                <details class="group bg-blue-50 p-6 rounded-2xl cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-lg text-blue-900 list-none">
+                        La climatisation réversible est-elle vraiment économique en hiver ?
+                        <span class="transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Oui, absolument ! Contrairement à un radiateur électrique classique qui rend 1 kWh de chaleur pour 1 kWh consommé, une pompe à chaleur air/air (clim réversible) restitue jusqu'à 4 kWh de chaleur pour 1 kWh consommé. C'est l'un des systèmes de chauffage les plus économiques.
+                    </p>
+                </details>
+
+                <!-- Question 3 -->
+                <details class="group bg-blue-50 p-6 rounded-2xl cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-lg text-blue-900 list-none">
+                        Faut-il entretenir sa climatisation ?
+                        <span class="transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Oui. Un nettoyage régulier des filtres par vous-même est recommandé. De plus, un entretien annuel par un professionnel est fortement conseillé (et obligatoire selon la charge en fluide frigorigène) pour vérifier l'étanchéité, prévenir les pannes et garantir un air sain.
+                    </p>
+                </details>
+            </div>
         </div>
     </section>
 
     <!-- Pied de page -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>&copy; 2026 L.C.T.B Électricité. Tous droits réservés.</p>
-        <p class="text-sm mt-2">📍 142 rue Ledru Rollin, 59860 Bruay-sur-l'Escaut | 📞 06 25 02 01 90</p>
-        <p class="text-sm mt-1">🕒 Ouvert jusqu'à 19h30</p>
+    <footer class="bg-blue-950 text-blue-300 py-12 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-2xl font-extrabold text-white mb-4">L.C.T.B Électricité & Climatisation</div>
+            <p class="mb-6 max-w-md mx-auto">Votre artisan de confiance à Bruay-sur-l'Escaut pour des installations électriques et thermiques de qualité.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-sm mb-8">
+                <span>📍 142 rue Ledru Rollin, 59860 Bruay-sur-l'Escaut</span>
+                <span class="hidden md:inline">|</span>
+                <span>📞 06 25 02 01 90</span>
+                <span class="hidden md:inline">|</span>
+                <span>🕒 Ouvert jusqu'à 19h30</span>
+            </div>
+            <p class="text-sm opacity-60">&copy; 2026 L.C.T.B Électricité. Tous droits réservés.</p>
+        </div>
     </footer>
 
+    <!-- Scripts pour l'interactivité -->
+    <script>
+        // Logique du pop-up
+        const popup = document.getElementById('promo-popup');
+        
+        // Afficher le popup après 5 secondes
+        setTimeout(() => {
+            // Vérifie si l'utilisateur ne l'a pas déjà fermé (optionnel)
+            if(!sessionStorage.getItem('popupFerme')) {
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+            }
+        }, 5000);
+
+        // Fonction pour fermer le popup
+        function fermerPopup() {
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            // Mémorise la fermeture le temps de la session
+            sessionStorage.setItem('popupFerme', 'true');
+        }
+    </script>
 </body>
 </html>
